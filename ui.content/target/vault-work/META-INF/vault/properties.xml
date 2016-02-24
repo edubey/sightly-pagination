@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Sightly Pagination - UI content</comment>
+<entry key="createdBy">prave_000</entry>
+<entry key="name">sightlypagination.ui.content</entry>
+<entry key="created">2016-02-22T22:02:23.588+0530</entry>
+<entry key="groupId">com.sightlypagination</entry>
+<entry key="version">0.0.1-SNAPSHOT</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">Sightly Pagination Content Package</entry>
+<entry key="description">UI content package for Sightly Pagination</entry>
+<entry key="artifactId">sightlypagination.ui.content</entry>
+<entry key="path">/etc/packages/Sightly Pagination Content Package/sightlypagination.ui.content.zip</entry>
+</properties>

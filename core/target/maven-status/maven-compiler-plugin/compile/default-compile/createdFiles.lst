@@ -1,0 +1,9 @@
+com\sightlypagination\core\filters\LoggingFilter.class
+com\sightlypagination\core\servlets\SimpleServlet.class
+com\sightlypagination\core\package-info.class
+com\sightlypagination\core\models\PaginationService.class
+com\sightlypagination\core\models\HelloWorldModel.class
+com\sightlypagination\core\models\PaginationInterface.class
+com\sightlypagination\core\listeners\SimpleResourceListener.class
+com\sightlypagination\core\schedulers\SimpleScheduledTask.class
+com\sightlypagination\core\models\SimplePage.class
