@@ -61,13 +61,11 @@ public class HelloWorldModel {
 	protected void init() {
 		try {
 			pageList = new ArrayList<SimplePage>();
-			logger.info("post called:");
 			Session session = request.getResource().getResourceResolver()
 					.adaptTo(Session.class);
 			ValueMap node = request.getResource().getValueMap();
-			logger.info("value:" + node.get("text", String.class));
 			String path = node.get("text", String.class);
-			
+
 			if (request != null) {
 				List<String> selectors = Arrays.asList(request
 						.getRequestPathInfo().getSelectors());
@@ -84,7 +82,6 @@ public class HelloWorldModel {
 					page = new SimplePage();
 					String title = session.getNode(s + "/jcr:content")
 							.getProperty("jcr:title").getString();
-					logger.info("Node:" + title);
 					page.setPath(s);
 					page.setTitle(title);
 
@@ -92,7 +89,6 @@ public class HelloWorldModel {
 
 				}
 
-				logger.info("Mesage :" + this.message);
 			}
 		} catch (Exception e) {
 			logger.info("Exception:" + e.getMessage());
@@ -109,10 +105,6 @@ public class HelloWorldModel {
 	}
 
 	public List<SimplePage> getPage() {
-		for (SimplePage s : this.pageList) {
-			logger.info("Path" + s.getPath());
-			logger.info("Title" + s.getTitle());
-		}
 		return this.pageList;
 	}
 

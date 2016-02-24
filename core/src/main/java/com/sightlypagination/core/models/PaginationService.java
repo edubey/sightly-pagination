@@ -50,7 +50,8 @@ public class PaginationService implements PaginationInterface {
 	private QueryBuilder builder;
 
 	@Override
-	public List getPaginationData(String pathtopage, String number, String selector) {
+	public List getPaginationData(String pathtopage, String number,
+			String selector) {
 
 		List<String> hyperLinks = new ArrayList();
 
@@ -67,30 +68,24 @@ public class PaginationService implements PaginationInterface {
 			Map<String, String> map = new HashMap<String, String>();
 			map.put("path", pathtopage);
 			map.put("type", "cq:Page");
-			// can be done in map or with Query methods
-		//	map.put("p.offset", selector); // same as query.setStart(0) below
-			map.put("p.limit", number); // same as query.setHitsPerPage(20)
-										// below
-
+			map.put("p.limit", number);
 			Query query = builder.createQuery(PredicateGroup.create(map),
 					session);
 			query.setStart(Integer.valueOf(number) * Integer.valueOf(selector));
 			logger.info("Multiply:" + Integer.valueOf(number)
 					* Integer.valueOf(selector));
-			//query.setHitsPerPage(Integer.valueOf(number));
+			// query.setHitsPerPage(Integer.valueOf(number));
 
 			SearchResult result = query.getResult();
 
-			
-
 			// paging metadata
 			int hitsPerPage = result.getHits().size(); // 20 (set above) or
-			
+
 			// lower
 			long totalMatches = result.getTotalMatches();
 			this.matches = String.valueOf(totalMatches);
-			logger.info("Matches"+ totalMatches);
-//			logger.info("Matches"+ totalMatches);
+			logger.info("Matches" + totalMatches);
+			// logger.info("Matches"+ totalMatches);
 			long offset = result.getStartIndex();
 			long numberOfPages = totalMatches / 20;
 
@@ -112,6 +107,7 @@ public class PaginationService implements PaginationInterface {
 		}
 
 	}
+
 	@Override
 	public String getMatches() {
 		logger.info("Returning matches:" + this.matches);
