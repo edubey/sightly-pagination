@@ -1,6 +1,6 @@
-# Sample AEM project template
+# Sightly Pagination Component
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+Pagination component works together with some of the important aspects of AEM which are Query Builder, Sling Model, JavaScript Use API and Sightly. 
 
 ## Modules
 
